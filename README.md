@@ -4,7 +4,7 @@ A full-stack, real-time messaging application built with **Python**, **WebSocket
 
 ![Project Status](https://img.shields.io/badge/status-active-success)
 ![Python Version](https://img.shields.io/badge/python-3.11+-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+
 
 ## ✨ Key Features
 
@@ -83,11 +83,4 @@ python -m http.server 8000 --directory web
 ```
 Then open your browser to: **[http://localhost:8000](http://localhost:8000)**
 
-## 🔮 Future Improvements
-- [ ] Add encryption support to the Web Client (WebCrypto API).
-- [ ] Implement user authentication (Passwords/JWT).
-- [ ] Message history persistence.
-- [ ] Docker support for easy deployment.
 
----
-Made with ❤️ by [Your Name]

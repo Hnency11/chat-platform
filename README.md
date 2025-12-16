@@ -1,48 +1,93 @@
-# Chat Platform Instructions
+# 🔐 Secure Real-Time Chat Platform
 
-## 1. Prerequisites
-Ensure your virtual environment is set up (I have already done this for you).
+A full-stack, real-time messaging application built with **Python**, **WebSockets**, and **PostgreSQL**. Features end-to-end encryption for private messages, persistent group chats, and a modern dark-themed web interface.
 
-## 2. Run the Server
-1. Open a terminal in the project folder.
-2. Activate the environment:
-   ```powershell
-   .\.venv\Scripts\Activate
-   ```
-3. Start the server:
-   ```powershell
-   python server.py
-   ```
-   *You should see: `Server started on ws://localhost:8765`*
+![Project Status](https://img.shields.io/badge/status-active-success)
+![Python Version](https://img.shields.io/badge/python-3.11+-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-## 3. Run the Client
-1. Open a **new** terminal window.
-2. Activate the environment:
-   ```powershell
-   .\.venv\Scripts\Activate
-   ```
-3. Start the client:
-   ```powershell
-   python client.py
-   ```
-4. Enter a **username** when prompted.
+## ✨ Key Features
 
-## 4. Chat Commands
-- **Private Message**: `/msg <username> <message>`
-- **Join Group**: `/join <group_name>`
-- **Group Message**: `/group <group_name> <message>`
-- **Quit**: `/quit`
+- **Real-Time Communication**: Instant messaging using asynchronous WebSockets (`websockets` library).
+- **End-to-End Encryption**: Private messages are encrypted using **RSA** (key exchange) and **Fernet/AES** (message encryption) via the `cryptography` library.
+- **Persistent Data**: Users and group memberships are stored in a **PostgreSQL** database.
+- **Microservices Architecture**: Decoupled backend (Python WS Server) and frontend (Static HTML/JS).
+- **Group chats**: Create and join multiple channels.
+- **Cross-Platform Clients**:
+  - **CLI Client**: Full-featured Python terminal client with encryption support.
+  - **Web Client**: Modern, responsive dark-mode interface (HTML5/TailwindCSS).
 
-## 5. Web Client (Optional)
-You can also use the web interface.
+## 🛠 Tech Stack
 
-**Option A (Simple)**:
-1. Go to `chat-platform/web` folder.
-2. Double-click `index.html`.
+- **Backend**: Python 3.11+, `asyncio`, `websockets`
+- **Database**: PostgreSQL, `psycopg2`
+- **Security**: `cryptography` (RSA + Fernet)
+- **Frontend**: HTML5, CSS3, TailwindCSS, Vanilla JS
 
-**Option B (Professional)**:
-1. Open a terminal.
-2. Run: `python -m http.server 8000 --directory web`
-3. Visit: `http://localhost:8000`
+## 🚀 Installation
 
-> **Note**: The web client connect to the same server (`ws://localhost:8765`), so web users and python terminal users can chat together (in Groups)!
+### Prerequisites
+- Python 3.8+
+- PostgreSQL installed and running
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/YOUR_USERNAME/chat-platform.git
+cd chat-platform
+```
+
+### 2. Set up Virtual Environment
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Database
+Create a `.env` file in the root directory:
+```env
+DATABASE_URL=postgres://YOUR_USER:YOUR_PASSWORD@localhost:5432/chatdb
+```
+*Note: The server will automatically create the required tables on first run.*
+
+## 💻 Usage
+
+### Starting the Server
+The backend server handles all WebSocket connections and database interactions.
+```powershell
+python server.py
+# Server started on ws://localhost:8765
+```
+
+### Method A: Using the CLI Client (Recommended for Encryption)
+The terminal client supports full RSA encryption.
+```powershell
+python client.py
+```
+**Commands:**
+- `/msg <user> <message>` : Send private encrypted message.
+- `/join <group>` : Join a group channel.
+- `/group <group> <message>` : Send message to group.
+- `/quit` : Exit.
+
+### Method B: Using the Web Interface
+A modern web UI for ease of use.
+
+**Run the static file server:**
+```powershell
+python -m http.server 8000 --directory web
+```
+Then open your browser to: **[http://localhost:8000](http://localhost:8000)**
+
+## 🔮 Future Improvements
+- [ ] Add encryption support to the Web Client (WebCrypto API).
+- [ ] Implement user authentication (Passwords/JWT).
+- [ ] Message history persistence.
+- [ ] Docker support for easy deployment.
+
+---
+Made with ❤️ by [Your Name]

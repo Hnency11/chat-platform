@@ -1,0 +1,4 @@
+websockets==12.0
+cryptography
+psycopg2-binary
+python-dotenv

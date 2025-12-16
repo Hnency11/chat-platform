@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Environment Variables (IMPORTANT: Do not commit!)
+.env
+
+# PyCharm/VSCode
+.idea/
+.vscode/
+
+# Database
+*.sqlite3
+*.db

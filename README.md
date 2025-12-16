@@ -22,7 +22,7 @@ A full-stack, real-time messaging application built with **Python**, **WebSocket
 - **Backend**: Python 3.11+, `asyncio`, `websockets`
 - **Database**: PostgreSQL, `psycopg2`
 - **Security**: `cryptography` (RSA + Fernet)
-- **Frontend**: HTML5, CSS3, TailwindCSS, Vanilla JS
+- **Frontend**: HTML5, CSS3, TailwindCSS, JS
 
 ## 🚀 Installation
 
